@@ -1,0 +1,22 @@
+{
+  "name": "@tphummel/date-range",
+  "version": "1.0.0",
+  "description": "generate a newline separated list of iso 8601 dates in a sequence",
+  "main": "index.js",
+  "bin": {
+    "date-range": "./cli.js"
+  },
+  "dependencies": {
+    "luxon": "0.3.0",
+    "minimist": "1.2.0"
+  },
+  "devDependencies": {
+    "standard": "latest",
+    "tap": "latest"
+  },
+  "scripts": {
+    "test": "standard && tap test.js --100 --coverage-report=text-summary"
+  },
+  "author": "Tom Hummel <tphummel@gmail.com",
+  "license": "ISC"
+}
