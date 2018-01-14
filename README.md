@@ -2,6 +2,8 @@
 
 generate a json array of iso-8601 date strings between a start and end date (inclusive).
 
+[![Build Status](https://travis-ci.org/tphummel/date-range.svg?branch=master)](https://travis-ci.org/tphummel/date-range)
+
 ### setup
 
 ```
