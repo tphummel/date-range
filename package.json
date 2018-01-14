@@ -15,7 +15,8 @@
     "tap": "latest"
   },
   "scripts": {
-    "test": "standard && tap test.js --100 --coverage-report=text-summary"
+    "test": "standard && tap test.js --100 --coverage-report=text-summary",
+    "fix": "standard --fix",
   },
   "author": "Tom Hummel <tphummel@gmail.com",
   "license": "MIT"
