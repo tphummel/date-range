@@ -11,12 +11,14 @@
     "minimist": "1.2.0"
   },
   "devDependencies": {
+    "pkg": "^4.3.0-beta.5",
     "standard": "latest",
     "tap": "latest"
   },
   "scripts": {
     "test": "standard && tap test.js --100 --coverage-report=text-summary",
     "fix": "standard --fix",
+    "release": "pkg ."
   },
   "author": "Tom Hummel <tphummel@gmail.com",
   "license": "MIT"
