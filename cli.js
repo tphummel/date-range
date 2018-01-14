@@ -3,22 +3,39 @@
 'use strict'
 
 const lib = require('./index')
-const args = require('minimist')(process.argv)
+const argv = require('minimist')(process.argv, {
+  boolean: ['help', 'version'],
+  alias: {
+    h: 'help',
+    v: 'version'
+  }
+})
 
-const result = lib({startDate: args._[2], endDate: args._[3]})
+if (argv.help) {
+  printUsage()
+  process.exit(0)
+}
+
+if (argv.version) {
+  console.log(require('./package.json').version)
+  process.exit(0)
+}
+
+const result = lib({startDate: argv._[2], endDate: argv._[3]})
 console.log(JSON.stringify(result))
 
-// function showUsage () {
-//   var usage = `
-// node range.js startDate endDate
-//   startDate inclusive (required): YYYY-MM-DD
-//   endDate exclusive (required): YYYY-MM-DD
-//   `
-//   console.log(usage)
-// }
+function printUsage () {
+  const usage = `
+  date-range.
 
-// if (!cliStartDate || !cliEndDate) {
-//   console.error('ERROR: start and end date required')
-//   showUsage()
-//   process.exit(1)
-// }
+  Usage:
+    date-range <start> <end>
+    date-range -h | --help
+    date-range -v | --version
+
+  Options:
+    -h --help     Show this screen.
+    -v --version  Show version.
+  `
+  console.log(usage)
+}
