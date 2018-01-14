@@ -15,6 +15,7 @@ date-range 2018-01-01 2018-01-15
 
 ```
 brew install csvkit
+brew install jq
 npm i -g @tphummel/date-range
 
 date-range 2018-01-01 2018-01-13 | jq -r '.[]' | csvjoin -H -c "2,1" --outer examples/sparse.csv - | csvcut -c 4,1,3 | csvsort -c 1 | csvlook
