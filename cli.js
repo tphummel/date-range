@@ -36,6 +36,10 @@ function printUsage () {
   Options:
     -h --help     Show this screen.
     -v --version  Show version.
+
+  Examples:
+    date-range 2017-01-01 2017-12-31
+    date-range 2018-03-01 2018-03-15
   `
   console.log(usage)
 }
