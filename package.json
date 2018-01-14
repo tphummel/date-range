@@ -18,5 +18,5 @@
     "test": "standard && tap test.js --100 --coverage-report=text-summary"
   },
   "author": "Tom Hummel <tphummel@gmail.com",
-  "license": "ISC"
+  "license": "MIT"
 }
