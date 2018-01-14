@@ -1,7 +1,7 @@
 {
   "name": "@tphummel/date-range",
   "version": "1.0.0",
-  "description": "generate a newline separated list of iso 8601 dates in a sequence",
+  "description": "generate a json array of iso-8601 date strings between a start and end date (inclusive)",
   "main": "index.js",
   "bin": {
     "date-range": "./cli.js"

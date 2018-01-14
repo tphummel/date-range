@@ -1,6 +1,6 @@
 # date-range
 
-generate a list of dates between a start and end date
+generate a json array of iso-8601 date strings between a start and end date (inclusive).
 
 ### usage
 
