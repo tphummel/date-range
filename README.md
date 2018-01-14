@@ -2,10 +2,18 @@
 
 generate a json array of iso-8601 date strings between a start and end date (inclusive).
 
+### setup
+
+```
+npm install --global @tphummel/date-range
+
+```
+
 ### usage
 
 ```
-npm i -g @tphummel/date-range
+date-range --help
+...
 
 date-range 2018-01-01 2018-01-15
 ["2018-01-01","2018-01-02","2018-01-03","2018-01-04","2018-01-05","2018-01-06","2018-01-07","2018-01-08","2018-01-09","2018-01-10","2018-01-11","2018-01-12","2018-01-13","2018-01-14","2018-01-15"]
