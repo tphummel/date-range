@@ -8,8 +8,17 @@ generate a json array of iso-8601 date strings between a start and end date (inc
 
 ```
 npm install --global @tphummel/date-range
+```
+
+or
 
 ```
+brew install tphummel/util/date-range
+```
+
+or
+
+download a standalone [executable](https://github.com/tphummel/date-range/releases/latest) for your system. Put the file (or link) on your $PATH.
 
 ### usage
 
