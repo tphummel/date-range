@@ -1,0 +1,16 @@
+install:
+  - npm install
+
+test_script:
+  - node --version
+  - npm --version
+  - npm test
+
+after_test:
+  - npm i -g npx
+  - npx --version
+  - npx pkg --version
+  - npx pkg . -t host
+  - DIR
+
+build: off
