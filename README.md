@@ -59,3 +59,29 @@ date-range 2018-01-01 2018-01-13 | jq -r '.[]' | csvjoin -H -c "2,1" --outer exa
 | 2018-01-12 |            |   |
 | 2018-01-13 |            |   |
 ```
+
+### release
+
+```
+git fetch --all
+git checkout master
+git pull
+npm test
+npm version (major|minor|patch)
+git push && git push --tags
+npm publish
+
+wget https://github.com/tphummel/date-range/archive/v2.1.0.tar.gz
+openssl sha256 < v2.1.0.tar.gz
+```
+
+Open PR to [homebrew tap](https://github.com/tphummel/homebrew-util) with updated version and hash.
+
+```
+npm run release
+tar -zcvf date-range-v2.1.0-linux64.tar.gz date-range-linux
+tar -zcvf date-range-v2.1.0-osx64.tar.gz date-range-macos
+tar -zcvf date-range-v2.1.0-win64.exe.tar.gz date-range-win.exe
+```
+
+Upload tars to the github release
