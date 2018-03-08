@@ -4,7 +4,7 @@
 
 const lib = require('./index')
 const argv = require('minimist')(process.argv, {
-  boolean: ['help', 'version'],
+  boolean: ['help', 'version', 'hours'],
   alias: {
     h: 'help',
     v: 'version'
@@ -21,7 +21,11 @@ if (argv.version) {
   process.exit(0)
 }
 
-const result = lib({startDate: argv._[2], endDate: argv._[3]})
+const result = lib({
+  startDate: argv._[2],
+  endDate: argv._[3],
+  withHours: argv.hours
+})
 console.log(JSON.stringify(result))
 
 function printUsage () {
@@ -30,10 +34,12 @@ function printUsage () {
 
   Usage:
     date-range <start> <end>
+    date-range --hours <start> <end>
     date-range -h | --help
     date-range -v | --version
 
   Options:
+    --hours  Print an item for each day-hour combination (24 per day)
     -h --help     Show this screen.
     -v --version  Show version.
 
