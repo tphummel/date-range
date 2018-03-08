@@ -21,6 +21,19 @@ tap.test('single day', (t) => {
   t.end()
 })
 
+tap.test('single day with hours', (t) => {
+  const singleDay = lib({
+    startDate: '2017-01-01',
+    endDate: '2017-01-01',
+    withHours: true
+  })
+  t.ok(Array.isArray(singleDay))
+  t.equal(singleDay.length, 24)
+  t.equal(singleDay[0], '2017-01-01T00')
+  t.equal(singleDay[23], '2017-01-01T23')
+  t.end()
+})
+
 tap.test(function cliTwoDays (t) {
   const cmd = `./cli.js 2018-01-01 2018-01-02`
 
@@ -37,6 +50,26 @@ tap.test(function cliTwoDays (t) {
     }
 
     t.equal(outputData.length, 2)
+    t.end()
+  })
+})
+
+tap.test(function cliTwoDaysHours (t) {
+  const cmd = `./cli.js --hours 2018-01-01 2018-01-02`
+
+  cp.exec(cmd, {
+    shell: 'bash'
+  }, (err, stdout, stderr) => {
+    t.ifErr(err)
+
+    let outputData
+    try {
+      outputData = JSON.parse(stdout)
+    } catch (e) {
+      t.fail(e)
+    }
+
+    t.equal(outputData.length, 48)
     t.end()
   })
 })
