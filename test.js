@@ -5,7 +5,7 @@ const lib = require('./index.js')
 const cp = require('child_process')
 
 tap.test('ten days', (t) => {
-  const tenDays = lib({startDate: '2017-01-01', endDate: '2017-01-10'})
+  const tenDays = lib({ startDate: '2017-01-01', endDate: '2017-01-10' })
   t.ok(Array.isArray(tenDays))
   t.ok(tenDays.length === 10)
   t.ok(tenDays[0] === '2017-01-01')
@@ -14,7 +14,7 @@ tap.test('ten days', (t) => {
 })
 
 tap.test('single day', (t) => {
-  const singleDay = lib({startDate: '2017-01-01', endDate: '2017-01-01'})
+  const singleDay = lib({ startDate: '2017-01-01', endDate: '2017-01-01' })
   t.ok(Array.isArray(singleDay))
   t.ok(singleDay.length === 1)
   t.ok(singleDay[0] === '2017-01-01')
@@ -35,7 +35,7 @@ tap.test('single day with hours', (t) => {
 })
 
 tap.test(function cliTwoDays (t) {
-  const cmd = `./cli.js 2018-01-01 2018-01-02`
+  const cmd = './cli.js 2018-01-01 2018-01-02'
 
   cp.exec(cmd, {
     shell: 'bash'
@@ -55,7 +55,7 @@ tap.test(function cliTwoDays (t) {
 })
 
 tap.test(function cliTwoDaysHours (t) {
-  const cmd = `./cli.js --hours 2018-01-01 2018-01-02`
+  const cmd = './cli.js --hours 2018-01-01 2018-01-02'
 
   cp.exec(cmd, {
     shell: 'bash'
@@ -75,7 +75,7 @@ tap.test(function cliTwoDaysHours (t) {
 })
 
 tap.test(function cliHelp (t) {
-  const cmd = `./cli.js --help`
+  const cmd = './cli.js --help'
 
   cp.exec(cmd, {
     shell: 'bash'
@@ -87,7 +87,7 @@ tap.test(function cliHelp (t) {
 })
 
 tap.test(function cliVersion (t) {
-  const cmd = `./cli.js --version`
+  const cmd = './cli.js --version'
 
   cp.exec(cmd, {
     shell: 'bash'
