@@ -1,15 +1,15 @@
 'use strict'
 
-const {DateTime} = require('luxon')
+const { DateTime } = require('luxon')
 
-function getDateSequence ({startDate, endDate, withHours}) {
+function getDateSequence ({ startDate, endDate, withHours }) {
   // todo: throw if both args are not present
   // todo: throw if both args are not iso8601 date
 
   const start = DateTime.fromISO(startDate).startOf('day')
-  const end = DateTime.fromISO(endDate).plus({days: 1}).startOf('day')
+  const end = DateTime.fromISO(endDate).plus({ days: 1 }).startOf('day')
 
-  let sequence = []
+  const sequence = []
   let current = start
   while (current.diff(end).as('days') < 0) {
     let isoSubstringLength
@@ -17,10 +17,10 @@ function getDateSequence ({startDate, endDate, withHours}) {
 
     if (withHours) {
       isoSubstringLength = 13
-      increment = {hours: 1}
+      increment = { hours: 1 }
     } else {
       isoSubstringLength = 10
-      increment = {days: 1}
+      increment = { days: 1 }
     }
 
     sequence.push(current.toISO().substr(0, isoSubstringLength))
