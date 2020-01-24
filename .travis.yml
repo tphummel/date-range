@@ -3,5 +3,5 @@ node_js:
   - "12"
   - "10"
   - "8"
-install: npm install
+install: npm ci
 test: npm test
