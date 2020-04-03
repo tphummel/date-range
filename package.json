@@ -7,7 +7,7 @@
     "date-range": "./cli.js"
   },
   "dependencies": {
-    "luxon": "0.3.1",
+    "luxon": "1.23.0",
     "minimist": "1.2.0"
   },
   "devDependencies": {
