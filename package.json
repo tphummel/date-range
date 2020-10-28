@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "pkg": "^4.4.9",
-    "standard": "^14.3.4",
+    "standard": "^15.0.1",
     "tap": "^14.10.8"
   },
   "scripts": {
