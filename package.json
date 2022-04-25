@@ -13,7 +13,7 @@
   "devDependencies": {
     "pkg": "^4.4.9",
     "standard": "^17.0.0",
-    "tap": "^14.10.8"
+    "tap": "^16.1.0"
   },
   "scripts": {
     "test": "standard && tap test.js --100 --coverage-report=text-summary",
